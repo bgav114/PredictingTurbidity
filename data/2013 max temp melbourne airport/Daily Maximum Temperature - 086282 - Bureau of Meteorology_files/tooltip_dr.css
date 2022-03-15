@@ -1,0 +1,24 @@
+/* tool tip format for table cell rollover */
+
+.tdtooltip td i{position:absolute; left:-9999px; z-index:1000; font-style:normal; }
+.tdtooltip td:hover{cursor:text;}
+.tdtooltip td:hover i, .tdtooltip td.tdhover i{
+	left:auto;
+	z-index:1000;font-weight:normal; color:#666;font-size:90%; 
+	background-color:#F3F4EF; 
+	padding:2px 3px 3px 3px;
+	width:48px;
+	border:1px solid #CC9; 
+	border-top: #F3F4EF;
+	margin-top:1.3em;
+	margin-left:-51px;
+	color: #663;
+	letter-spacing:.1em;
+} 
+.tdtooltip td.tdhover i{ margin-left:-54px;width:49px;padding-bottom:2px;}
+.tdtooltip tr:hover{background-color:#F3F4EF;}
+
+@media print{
+	.tdtooltip td i{position:relative; left:auto; z-index:0; display:block; font-size:.85em; color: #CCCC99; font-weight:normal;} 
+	td, tr{vertical-align:top;}
+	}

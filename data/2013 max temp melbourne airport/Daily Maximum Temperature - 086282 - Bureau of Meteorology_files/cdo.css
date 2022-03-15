@@ -1,0 +1,230 @@
+/* Global CSS Document for Climate Data Online pages */
+/* Last modified 2011-04-27 */
+/* some styles from data.css */
+
+/* TEST */
+#left-block {display: none !important;}
+#content-block {width:auto; padding-left: 20px; float:none;}
+.middle-col {width:760px; max-width: 760px; box-sizing:border-box; }
+#nav-path {float:none; padding-left:20px;  padding-left:20px;}
+#nav-path {float:none; padding-left:20px; margin-bottom: 2em;}
+#right-block a[href="/lam/climate/index.htm"] {display:none;}
+h1 {font-size: 1.8em; margin-bottom: 1em;}
+h2 {font-size: 1.4em;}
+h1+h2 {margin-top:-2em;}
+
+p, ul, ol, dl {line-height: 1.6em;}
+
+.page-menu { padding:1em; /* display:none; */}
+
+/*#left-block {position:absolute; top:7em;}*/
+.no-show {display:none;}
+/* changing CDO feature graphics */
+#promo-block  { /* background:url(/climate/cdo/images/announcements/wsd-promo.png) right no-repeat;*/}
+#promo-block p{width:430px;}
+#promo-image  {position:absolute;left:434px; top:0; width:136px;height:90px; }
+/* from data-services.css */
+.wsd-icon{padding:1px 1px 1px 18px !important; background: url(/climate/data-services/images/wsd-icon.png) no-repeat left;}
+
+/* headings */
+/* LHS numbered images for process steps, etc */
+.step-one, .step-two, .step-three, .step-four {
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left:20px;
+	margin-top: 1em;
+}
+.step-one	{background-image: url(/climate/cdo/images/symbols/numbers/one.gif);}
+.step-two	{background-image: url(/climate/cdo/images/symbols/numbers/two.gif);}
+.step-three	{background-image: url(/climate/cdo/images/symbols/numbers/three.gif);}
+.step-four	{background-image: url(/climate/cdo/images/symbols/numbers/four.gif);}
+/* other symbols */
+.symbol-rain{background:url(http://www.bom.gov.au/weather-services/images/symbols/small/rain.png) no-repeat 0 0; padding-left:24px;}
+
+/* tables */
+table.climatedata {empty-cells:show;}
+
+/* diagrammatic images, these may need modification or change some pages to common.css structure */
+img.illustration {
+	 margin-bottom: 0.5em;
+	 border: black 1px solid;
+ }
+
+.illustration-l {
+	float: left;
+	margin: .2em 1em .5em 0;
+  }
+
+.illustration-r  {
+	float: right;
+	clear: right;
+	margin: .2em 0 .5em 1em;
+ }
+ 
+.illustration-c  {
+	clear: both;
+	margin: .2em auto .5em auto;
+ }
+ 
+.illustration-l, .illustration-r,  .illustration-c {
+	text-align: center;
+	padding: 5px;
+	font-size: 90%;
+	color:#666;
+	border: #666 solid 1px;
+ }
+/* spelling */
+.innactive{color:#c0c0c0;}
+ 
+/* products 'cd' symbol, climate information reference symbol */
+ul.cd li, ol.cd li, li.cd {list-style-image: url(/watl/images/symbols/rss.gif);}
+a.cd                      {background-image: url(/watl/images/symbols/rss.gif);}
+#right-block ul li.cd     {list-style-image:url(/climate/cdo/images/symbols/cd-bullet.png)}
+a.reference               {background-image:url(/climate/cdo/images/symbols/book_open.png); background-repeat:no-repeat; background-position:0 0; padding-left:20px;}
+
+/* styles from dr-data.css */
+
+/* generic select spinner */
+.button-pair {
+	width:64px;
+	display:inline;
+	position:relative;
+	line-height:11px;
+	float:right;
+}
+.button-pair img {
+	padding:0;
+	margin:0;
+	display:block;
+	float:left;
+}
+select.extra-controls {display:inline;}
+
+.downloads{
+	float:right;
+    margin-right:185px;
+    padding:5px; 
+	background-color:#f6f6f6; text-align:right; width:auto; 
+	border-color: #E5E5E5;
+	border-top-left-radius:10px; border-bottom-left-radius:10px; 
+}	
+.downloads a{padding-right:.6em; }
+.downloads a.spreadsheet, .downloads a.pdf {background-image:none; padding-left:.6em;}
+a.pdf {background-image: url(/water/images/symbols/icon_pdf.gif); background-position:1px .3em; padding-left:14px;}
+
+ul#page-info, ul.downloads {padding:.8em .2em .8em .4em;margin:0 185px .3em 0; width:auto;}
+ul#page-info     {float:left;  background-position: left; padding-left:20px;}
+
+ul.downloads a:link, ul.downloads a:visited{text-decoration:none; padding:0 4px 0 2px;}
+ul#page-info li, ul.downloads li  {display:inline; border-left:1px dotted #ccc; padding:.3em;}
+ul#page-info li:first-child, ul.downloads li:first-child {border-left:none;}
+
+.box-feature {clear:both;}
+/* end temp */
+
+/* redundant? */
+.formats {
+	float:right;
+	padding-right:10px;
+}
+
+.mousetip {
+	display:block;
+	color:#C00;
+	background:url(/climate/cdo/images/symbols/cursor.gif) no-repeat left;
+	padding-left:12px;
+	margin-left:4px;
+	clear:both;
+}
+
+h2+div.mousetip {margin-top:0.5em;}
+.indent-large {padding-left: 2em;}
+
+/* keep with data.css ? */
+.no-qc {
+	color: #666;/*#900;*/
+	font-style:italic;
+	font-weight:normal;
+}
+/* end migration from dr_data.css */
+
+@media print{
+/* alt for icons without transparent background - desirable for some browsers/printers */
+li.cd li.reference        {list-style-image: none; list-style:circle; background-image:none;list-style-position:inside;padding-left:0;}
+a.cd, a.reference         {background-image: none; padding-left:0;}
+/* moved from dr_data.css */
+td, tr{vertical-align:top;}
+#page {
+	width: 99%;
+	border: none; max-width: 99%;
+}
+#content-block {padding: 0 1px;}
+div#page-info,  .formats {display: none;}
+}
+
+/* common.css overrides for colour contrast requirements */
+.p-id, .date-modified, .grey {color:#666;}
+ 
+ /* copyright section of products */
+.do-print h2{font-size:1em;padding:1.0em 0.2em  0.1em 0.2em; margin:0;}
+
+h1 + h2 { margin-top: -1em; padding-left:0; color:#000; font-size:1.1em;} 
+
+@media print{
+	h1 + h2 { display:none;}
+	/*h2, h3{margin-bottom:-.6em; padding-bottom:0;}*/
+}
+/* deprecated */
+.border-round-8 { -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px;}
+
+.access-info{position:absolute;left:-10000px;z-index: 2;background-color:#fff;}
+
+/*
+html { overflow-y: scroll;}
+@media screen{#page {margin:0 auto;}}
+*/
+/* loading div */
+/* #loading => reconcile with calendar
+*/
+#page {position:relative;}
+#loading, #loadingScreen {width:50%;height:300px;  top:13em; left:220px; position:absolute; z-index:10002;  background: url(/climate/cdo/images/interface/transparent-tint-70.png); text-align:center;border:4px solid #efefef;display:none;} 
+div#loading div.shadow, div#loadingScreen div.shadow {position:relative;  border:2px solid #fff; margin:15% auto;width:30px;height:30px; background:#efefef url(/climate/cdo/images/symbols/loading-cdo-3.gif) no-repeat; }
+div#loading p, div#loadingScreen p{position:absolute;top:40px;left:-80px; font-weight:bold; color: #F60; text-align:center;width:180px;}
+/* we have 2 loading formats - full page, vs local (eg. calendar) - different ids? or add class */
+
+/* drop shadow */
+.shadow{-moz-box-shadow: 1px 1px 12px 2px #ccc;-webkit-box-shadow:  1px 1px 5px 4px #ccc;box-shadow:  1px 1px 5px 4px #ccc;}
+
+/*corners*/
+.corner-l,.corner-20 {border-radius:20px; -moz-border-radius:20px; -webkit-border-radius:20px;}
+.corner-m {border-radius:12px; -moz-border-radius:12px; -webkit-border-radius:12px;}
+.corner-s {border-radius:6px; -moz-border-radius:6px; -webkit-border-radius:6px;}
+
+.corner-top{border-radius:6px 6px 0 0;}
+.corner-top-left{border-radius:6px 0 0 0;}
+.corner-left{border-radius:6px 0 0 6px;}
+.corner-right{border-radius:6px 6px 0 0;}
+		
+/* screens */
+.trans-shade-60 {background:url(/climate/cdo/images/interface/transparent-shade-60.png);}	
+.trans-shade-50 {background:url(/climate/cdo/images/interface/transparent-shade-50.png);}
+
+.trans-tone-70 {background:url(/climate/cdo/images/interface/transparent-tone-60.png);}	
+.trans-tone-50 {background:url(/climate/cdo/images/interface/transparent-tone-50.png);}	
+
+.trans-tint-70 {background:url(/climate/cdo/images/interface/transparent-tint-70.png);}	
+.trans-tint-70 {background:url(/climate/cdo/images/interface/transparent-tint-60.png);}	
+
+.box-intro {clear:both;margin:0 0 1em 0; padding-top:.2em;}
+/* temp - move to cdo.css  */
+.block-33{width:33%;float:left;margin:0;padding:0;}
+.block-66{width:66%;float:left;margin:0;padding:0;}
+.block-left{float:left;width:auto;margin:0;padding:0;}
+
+#breadcrumb {/*background-color:#efefef;*/ margin:0 0 1em 1em; padding:.4em;font-size:.9em; height:1.2em;}
+#breadcrumb ul {padding:0;margin:0; margin-left: 1em; width:100%;background-color:#efefef}
+#breadcrumb li {display:block; width:auto; float:left;padding-left:14px; background: url(/climate/images/symbols/bullet-arrow.png) no-repeat 2px 2px;}
+#breadcrumb li:first-child {background:url(/climate/images/symbols/bullet.gif) no-repeat 0 0;}
+#breadcrumb a:link , #breadcrumb a:visited{text-decoration:none;}
+
+#right-block {overflow: hidden;}

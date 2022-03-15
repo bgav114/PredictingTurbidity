@@ -1,0 +1,385 @@
+/* CSS Document for Climate Data Online
+Online climate data pages
+Last updated 2011 04 27 
+reconciled from data.css dr_data.css dr_data-solar.css */
+
+/* Definitions for table and graph of climate data */
+/* TEST NO MENU */
+.mousetip{
+float:right;
+margin-right:185px;
+display: inline-block;
+margin-left: 100px;
+}
+
+.align-right {
+    margin-right:185px;
+} 
+.metadata {
+padding:1em;
+box-sizing:border-box;
+max-width: 795px;
+}
+p {max-width: 795px;}
+h1 {font-size: 1.8em; margin-bottom: 1em;}
+h2#all_years {margin-bottom: 1em;}
+h1 + h2 {font-size: 1.4em; margin-top: -2em;}
+
+table:after {
+    content: " ";
+    line-height: 1em;
+}
+/* END TEST MENU */
+
+#table-options .mousetip, div#key .mousetip {
+    text-align:left;
+    background-image: url(/climate/cdo/images/accumulation.png);
+    padding-left: 40px;
+    padding-bottom:4px;
+    float:none;
+}
+
+
+/* ie6 help */
+#table-options div.block-right{float:right; text-align:left; width:auto; margin:0 4px 0 0 ;padding:.2em; line-height:1.6em; overflow:visible;}
+#table-options div.block-right fieldset {padding:0;margin:0;border:none;}
+#table-options div.block-right label {display:inline-block;}/* prevent webkit browsers wrapping years */
+.block-right span{margin-left:.4em; }
+/*table.climatedata */
+.climatedata {
+    border-collapse:collapse;
+    margin: 2px 0 0.25em 0;
+    padding: 2px;
+    font-size: 1em;
+    text-align: right;
+    width: 795px; 
+    border:1px solid #CC9; /* for Firefox rendering job */
+}
+.climatedata td, .climatedata th {
+    border-collapse:collapse;
+    border: 1px solid #CC9;
+    padding: 2px;
+    padding-right: 4px;
+    min-height: 19px;
+    line-height: 1em;
+}
+.climatedata thead th, .climatedata tbody tr.year_row th {
+    font-weight: bold;
+    text-align: center;
+    font-size: 90%;
+    background-color: #CCCC99;
+    min-height: 1em;
+    padding: 4px 2px;
+    border-right: 1px #996 solid;
+    border-left: 1px #cc9 solid;
+}
+
+.climatedata tbody th {
+    background-color:#F3F4EF;
+    text-align:left;
+    padding-left: 5px;
+    font-weight:normal;
+}
+.climatedata  tbody th.graphcell, .climatedata tbody tr.graphcell td {
+    background-color: #E5E5C3;
+    padding: 2px 0px;
+    border-right: 1px #996 solid;
+    border-left: 1px #cc9 solid;
+}
+/* hide graph cells from enabled screen readers */
+/* !important for old-IE users to help overide media all/screen/or implicit/computed styles. Display:none{todo:test all user-agents} to supplement where poor inheritance  */
+/* CSS 2.1 */
+@media aural{.climatedata  tbody th.graphcell, .climatedata tbody tr.graphcell td, .climatedata tbody tr.graphcell td a {speak:silent !important; /*display:none;*/}} 
+/* CSS 3 */
+@media speech{.climatedata  tbody th.graphcell, .climatedata tbody tr.graphcell td, .climatedata tbody tr.graphcell td a {speak:none !important;/*display:none;*/}}
+
+.climatedata tbody tr.graphcell th { padding-left:4px; font-size:1em;border-right: 1px #996 solid; background-color: #E5E5C3 !important;}
+.climatedata tr:hover {background-color:#F3F4EF;}
+
+td.notDay {background-color:#e6e6d1;}
+
+/* table#dataTable */
+tr#summary td, tr#summary th {border-top-width:2px;}
+tr#summary td, tr#summary+tr td, tr#summary+tr+tr td {background-color:#F3F4EF;}
+.climatedata tbody tr th:first-child a {border-bottom:dotted 1px #999; text-decoration:none; display:block; max-width: 2.5em; padding:0; margin: 1px;}
+
+/* dive#table-options */
+div#table-options {
+    border: #CC9  solid 1px; 
+    /*background:#f7f7f7 url(/climate/cdo/images/interface/gradient-grey-down.png) repeat-x;
+    border-top-left-radius:10px; 
+    -moz-border-radius-topleft: 10px; 
+    -webkit-border-top-left-radius:10px;
+    border-top-right-radius:10px; 
+    -moz-border-radius-topright: 10px; 
+    -webkit-border-top-right-radius:10px;
+    */
+    background-color:#efefef;
+ 
+    border-bottom:none;
+    width: 793px;
+    clear:both;
+    padding:10px;
+    min-height:5.6em;
+    margin:10px 0 0 0 ; 
+    position:relative;
+    box-sizing:border-box;
+}
+
+#table-options fieldset{
+    border:none;
+}
+#table-options  label, #table-options b {
+    font-weight:bold;
+    color:#666;
+}
+
+.button-pair {
+    width:64px;
+    display:inline;
+    position:relative;
+    line-height:11px;
+    float:right;
+}
+.button-pair img {
+    padding:0;
+    margin:0;
+    display:block;
+    float:left;
+}
+
+div#yearSelect {
+    vertical-align:middle;
+    width:auto;
+    float:left;
+    position:absolute;
+    left:33px;
+    z-index:99;
+    bottom: -2em;
+}
+div#yearSelect select {background-color:#e5e5c3; margin:0}
+div#yearSelect option[selected] {font-weight:bold;}
+
+select.extra-controls {display:inline;}
+div#table-options label#labelWeather {float:right;}
+div#table-options select.extra-controls {margin:0; padding:0}
+div#table-options label.no-float {float:none;}
+
+#dataTable thead th, #statsTable thead th {padding:6px 0}
+
+/* additional styles */
+div.box-feature {background-color: white;}
+
+.no-qc {
+    color: #666; /*#900;*/
+    font-style:italic;
+    font-weight:normal;
+}
+.graphcell {
+  font-weight: bold;
+  text-align: center;
+  font-size: 90%;
+  background-color: #E5E5C3;
+  vertical-align: middle;
+  padding:1px 0;
+}
+.cell_shade {
+    background: #FFE3B3;
+}
+
+.formats {
+    float:right;
+    padding-right:10px;
+}
+.mousetip {
+    display:block;
+    color:#C00;
+    background:url(/climate/cdo/images/symbols/cursor.gif) no-repeat left;
+    padding-left:12px;
+    margin-left:4px;
+    clear:both;
+}
+
+h2+div.mousetip, h2+div.no-print {margin-top:-1.5em;}
+
+a#monthlyLink {
+    text-decoration:none;
+    margin: 0 10px 0 40px;
+}
+select#date {float:left;}
+.acc {color:#396;}
+p#annualTotal {
+    text-align:right;
+    min-height:17px;
+}
+a.plot {
+    background:url(/climate/cdo/images/symbols/graphstat.gif) no-repeat left center;
+    padding-left:25px;
+    text-decoration:none;
+    margin-left:15px;
+}
+a.datalink {
+    background:url(/climate/cdo/images/symbols/table-butt.gif) no-repeat left center;
+    padding-left:25px;
+    text-decoration:none;
+    margin-left:15px;
+}
+a.plot:hover {text-decoration:underline}
+p#prodCodeDisplay span {float:left;}
+
+/* styles for graph */
+div#nav {
+    float:left;
+    background: #FFF;
+    background-image: url(/climate/cdo/images/symbols/graphstat.gif);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    margin-top: 60px;
+    vertical-align:middle;
+    border: 1px solid #eee;
+    padding:5px;
+    padding-left: 25px;
+}
+div#nav ul {
+    margin: 0px;
+    padding-left: 18px;
+    text-align: center;
+    vertical-align:middle;
+}
+div#nav li {
+    position: relative; 
+    list-style: none; 
+    margin: 0px; 
+    float: left;
+    width: auto; 
+    padding: 5px;
+    padding-bottom: 8px;  
+    line-height: 0.8em; 
+}
+div#nav li+li {border-left: 1px solid #ccc;}
+div#nav li#selected {
+    background-image:url(/climate/cdo/images/symbols/arrow-small-up.png);
+    background-repeat: no-repeat;
+    background-position: center bottom; 
+    background-color:#E5E5C3;
+    border: 1px solid #999  !important;
+}
+div#nav li:hover {background-color:#e5e5e1;}
+p.top {
+    width: 760px !important; 
+    font-weight:normal;
+}
+div#nav li a {
+    display: block; 
+    text-decoration: none; 
+    width: auto;    
+    color: #000099; 
+    vertical-align:middle;
+}
+div#nav li a:hover {
+    color: black; 
+    text-decoration: underline;
+}
+div#nav>ul a {width: auto;}
+img#datagraph {
+    position:relative;
+    margin-top: 5px;
+    margin-left:10px;
+    width: 960px;
+    height: 480px;
+    clear:both;
+}
+div.datagraph {clear:both;}
+
+.indent-large {padding-left: 2em;}
+
+.formats {
+    float:right;
+    padding-right:10px;
+}
+
+.box-feature {clear:both;}
+
+table.printedmetadata {border:none;}
+table.printedmetadata td{border-collapse:collapse;}
+
+/* metadata */
+.metadata  {
+    line-height:1.5em; min-height:3.2em;overflow:visible; display:table;  position:relative; background-color: #f5f5f5; clear:both;
+    border:2px solid #e5e5e5;
+    width:99.4%; /* ie 6 fix */
+}
+.metadata  div              {float:left; }
+div.metadata div.line       {float:left; width:400px;}
+.metadata strong            {color:#666;padding:0 .3em;margin-left:0;}
+#site strong                {margin-bottom:1em; display:inline-block; float:left;}
+#site                       {width:300px; height:3.2em;}
+#id                         {width:114px;}
+#status                     {width:164px;}
+#startdate                  {width:114px;}
+#latitude                   {width:114px;clear:left; }
+#longitude                  {width:114px;}
+#elevation                  {width:134px;}
+@media print                {#site {height:1.5em} }
+.metadata #map-link         {
+                            float:right;
+                            background:#ebebd6 url(/climate/cdo/images/interface/map-button.gif) right no-repeat ;
+                            line-height:40px;
+                            width: 46px;
+                            height: 40px;
+							margin:0;
+                            }
+#map-link a                 {
+                            position: relative;
+                            top: -7px;
+                            text-decoration:none;
+                            padding-left: 4px;
+                            }
+.metadata #map-link:hover  {background-color:#e2e2c5;}
+.metadata #map-link a      {display:block; height:40px;margin-top:3px;padding:2px 0 3px 4px;}
+.metadata #map-link a:hover{text-decoration:underline}
+
+#table-options select#statType {margin:.6em;}
+
+/* monthly year select below table */
+form#monthly_yr {position:relative; height:2em;}
+form#monthly_yr label {display:block;position:absolute;left:9em;top:.4em;}
+form#monthly_yr select#dr_year {position:absolute; left:0; width:6em; background-color:#efefef;}
+input#viewDailyYear {margin-left:6em; width: 2.4em;}
+
+/* h2#all_years {margin-bottom:0;}*/
+h2#p1961-1990 {margin-bottom:0; display:none;}
+div.align-right a:link.inpage-info {text-decoration:none;}
+div.align-right a:active.inpage-info {text-decoration:underline;}
+
+@media print{
+	#page {width: 99%;border: none; max-width: 99%;}
+	#content-block {padding: 0px 1px;}
+	
+	div#page-info, div#nav, .formats,  .mousetip, .graphcell, .plot, h2:first-child,  p#prodCodeDisplay a, ul.downloads, #map-link{display: none;}
+	td#map-link a {visibility: hidden;}
+	div#table-options div.block-left, #yearSelect{display:none;}
+	div.do-print h2, p#prodCodeDisplay {display:block;}
+	
+	div#table-options {width:100%; min-height:1em;  margin:0 0 -1.2em 0; border:none;text-align:right;background-image:none;overflow:visible;}
+	
+	div#table-options div.block-right {text-align:right;width:100%; float:none;}
+	.do-print {clear:both;}
+	
+	#dataTable td i {
+		position:relative;
+		left:auto;
+		z-index:0;
+		display:block;
+		font-size:.85em;
+		color: #CCCC99;
+		font-weight:normal;
+	} 
+	td, tr {vertical-align:top;}
+	table.climatedata {
+		border: thin black solid;
+		width:100%;
+		max-width:100%;
+		margin: 15px 2px 0px 2px; 
+	}
+}

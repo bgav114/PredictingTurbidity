@@ -1,0 +1,437 @@
+NOTES FOR DC02D COMPLETED ON 23/09/2021
+____________________________________________________________________________________________
+____________________________________________________________________________________________
+
+DATA FILE
+
+
+
+Byte Location , Byte Size  , Explanation
+--------------------------------------------------------------------------------------------
+
+
+1-2           ,2           , Record identifier - dc
+4-9           ,6           , Bureau of Meteorology Station Number.
+11-20         ,10          , Year month day in YYYY,MM,DD format.
+22-30         ,9           , *--- Global Solar Exposure at location in MJ.m-2.
+32-40         ,9           , *--- Uncertainty of total daily global solar exposure in MJ.m-2.
+42-50         ,9           , *--- Global solar exposure for the half-hour ending 0030 hours Solar Time in MJ.m-2.
+52-60         ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0030 hours Solar Time in MJ.m-2.
+62-70         ,9           , *--- Global solar exposure for the half-hour ending 0100 hours Solar Time in MJ.m-2.
+72-80         ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0100 hours Solar Time in MJ.m-2.
+82-90         ,9           , *--- Global solar exposure for the half-hour ending 0130 hours Solar Time in MJ.m-2.
+92-100        ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0130 hours Solar Time in MJ.m-2.
+102-110       ,9           , *--- Global solar exposure for the half-hour ending 0200 hours Solar Time in MJ.m-2.
+112-120       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0200 hours Solar Time in MJ.m-2.
+122-130       ,9           , *--- Global solar exposure for the half-hour ending 0230 hours Solar Time in MJ.m-2.
+132-140       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0230 hours Solar Time in MJ.m-2.
+142-150       ,9           , *--- Global solar exposure for the half-hour ending 0300 hours Solar Time in MJ.m-2.
+152-160       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0300 hours Solar Time in MJ.m-2.
+162-170       ,9           , *--- Global solar exposure for the half-hour ending 0330 hours Solar Time in MJ.m-2.
+172-180       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0330 hours Solar Time in MJ.m-2.
+182-190       ,9           , *--- Global solar exposure for the half-hour ending 0400 hours Solar Time in MJ.m-2.
+192-200       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0400 hours Solar Time in MJ.m-2.
+202-210       ,9           , *--- Global solar exposure for the half-hour ending 0430 hours Solar Time in MJ.m-2.
+212-220       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0430 hours Solar Time in MJ.m-2.
+222-230       ,9           , *--- Global solar exposure for the half-hour ending 0500 hours Solar Time in MJ.m-2.
+232-240       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0500 hours Solar Time in MJ.m-2.
+242-250       ,9           , *--- Global solar exposure for the half-hour ending 0530 hours Solar Time in MJ.m-2.
+252-260       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0530 hours Solar Time in MJ.m-2.
+262-270       ,9           , *--- Global solar exposure for the half-hour ending 0600 hours Solar Time in MJ.m-2.
+272-280       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0600 hours Solar Time in MJ.m-2.
+282-290       ,9           , *--- Global solar exposure for the half-hour ending 0630 hours Solar Time in MJ.m-2.
+292-300       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0630 hours Solar Time in MJ.m-2.
+302-310       ,9           , *--- Global solar exposure for the half-hour ending 0700 hours Solar Time in MJ.m-2.
+312-320       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0700 hours Solar Time in MJ.m-2.
+322-330       ,9           , *--- Global solar exposure for the half-hour ending 0730 hours Solar Time in MJ.m-2.
+332-340       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0730 hours Solar Time in MJ.m-2.
+342-350       ,9           , *--- Global solar exposure for the half-hour ending 0800 hours Solar Time in MJ.m-2.
+352-360       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0800 hours Solar Time in MJ.m-2.
+362-370       ,9           , *--- Global solar exposure for the half-hour ending 0830 hours Solar Time in MJ.m-2.
+372-380       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0830 hours Solar Time in MJ.m-2.
+382-390       ,9           , *--- Global solar exposure for the half-hour ending 0900 hours Solar Time in MJ.m-2.
+392-400       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0900 hours Solar Time in MJ.m-2.
+402-410       ,9           , *--- Global solar exposure for the half-hour ending 0930 hours Solar Time in MJ.m-2.
+412-420       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 0930 hours Solar Time in MJ.m-2.
+422-430       ,9           , *--- Global solar exposure for the half-hour ending 1000 hours Solar Time in MJ.m-2.
+432-440       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1000 hours Solar Time in MJ.m-2.
+442-450       ,9           , *--- Global solar exposure for the half-hour ending 1030 hours Solar Time in MJ.m-2.
+452-460       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1030 hours Solar Time in MJ.m-2.
+462-470       ,9           , *--- Global solar exposure for the half-hour ending 1100 hours Solar Time in MJ.m-2.
+472-480       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1100 hours Solar Time in MJ.m-2.
+482-490       ,9           , *--- Global solar exposure for the half-hour ending 1130 hours Solar Time in MJ.m-2.
+492-500       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1130 hours Solar Time in MJ.m-2.
+502-510       ,9           , *--- Global solar exposure for the half-hour ending 1200 hours Solar Time in MJ.m-2.
+512-520       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1200 hours Solar Time in MJ.m-2.
+522-530       ,9           , *--- Global solar exposure for the half-hour ending 1230 hours Solar Time in MJ.m-2.
+532-540       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1230 hours Solar Time in MJ.m-2.
+542-550       ,9           , *--- Global solar exposure for the half-hour ending 1300 hours Solar Time in MJ.m-2.
+552-560       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1300 hours Solar Time in MJ.m-2.
+562-570       ,9           , *--- Global solar exposure for the half-hour ending 1330 hours Solar Time in MJ.m-2.
+572-580       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1330 hours Solar Time in MJ.m-2.
+582-590       ,9           , *--- Global solar exposure for the half-hour ending 1400 hours Solar Time in MJ.m-2.
+592-600       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1400 hours Solar Time in MJ.m-2.
+602-610       ,9           , *--- Global solar exposure for the half-hour ending 1430 hours Solar Time in MJ.m-2.
+612-620       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1430 hours Solar Time in MJ.m-2.
+622-630       ,9           , *--- Global solar exposure for the half-hour ending 1500 hours Solar Time in MJ.m-2.
+632-640       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1500 hours Solar Time in MJ.m-2.
+642-650       ,9           , *--- Global solar exposure for the half-hour ending 1530 hours Solar Time in MJ.m-2.
+652-660       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1530 hours Solar Time in MJ.m-2.
+662-670       ,9           , *--- Global solar exposure for the half-hour ending 1600 hours Solar Time in MJ.m-2.
+672-680       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1600 hours Solar Time in MJ.m-2.
+682-690       ,9           , *--- Global solar exposure for the half-hour ending 1630 hours Solar Time in MJ.m-2.
+692-700       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1630 hours Solar Time in MJ.m-2.
+702-710       ,9           , *--- Global solar exposure for the half-hour ending 1700 hours Solar Time in MJ.m-2.
+712-720       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1700 hours Solar Time in MJ.m-2.
+722-730       ,9           , *--- Global solar exposure for the half-hour ending 1730 hours Solar Time in MJ.m-2.
+732-740       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1730 hours Solar Time in MJ.m-2.
+742-750       ,9           , *--- Global solar exposure for the half-hour ending 1800 hours Solar Time in MJ.m-2.
+752-760       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1800 hours Solar Time in MJ.m-2.
+762-770       ,9           , *--- Global solar exposure for the half-hour ending 1830 hours Solar Time in MJ.m-2.
+772-780       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1830 hours Solar Time in MJ.m-2.
+782-790       ,9           , *--- Global solar exposure for the half-hour ending 1900 hours Solar Time in MJ.m-2.
+792-800       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1900 hours Solar Time in MJ.m-2.
+802-810       ,9           , *--- Global solar exposure for the half-hour ending 1930 hours Solar Time in MJ.m-2.
+812-820       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 1930 hours Solar Time in MJ.m-2.
+822-830       ,9           , *--- Global solar exposure for the half-hour ending 2000 hours Solar Time in MJ.m-2.
+832-840       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 2000 hours Solar Time in MJ.m-2.
+842-850       ,9           , *--- Global solar exposure for the half-hour ending 2030 hours Solar Time in MJ.m-2.
+852-860       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 2030 hours Solar Time in MJ.m-2.
+862-870       ,9           , *--- Global solar exposure for the half-hour ending 2100 hours Solar Time in MJ.m-2.
+872-880       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 2100 hours Solar Time in MJ.m-2.
+882-890       ,9           , *--- Global solar exposure for the half-hour ending 2130 hours Solar Time in MJ.m-2.
+892-900       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 2130 hours Solar Time in MJ.m-2.
+902-910       ,9           , *--- Global solar exposure for the half-hour ending 2200 hours Solar Time in MJ.m-2.
+912-920       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 2200 hours Solar Time in MJ.m-2.
+922-930       ,9           , *--- Global solar exposure for the half-hour ending 2230 hours Solar Time in MJ.m-2.
+932-940       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 2230 hours Solar Time in MJ.m-2.
+942-950       ,9           , *--- Global solar exposure for the half-hour ending 2300 hours Solar Time in MJ.m-2.
+952-960       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 2300 hours Solar Time in MJ.m-2.
+962-970       ,9           , *--- Global solar exposure for the half-hour ending 2330 hours Solar Time in MJ.m-2.
+972-980       ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 2330 hours Solar Time in MJ.m-2.
+982-990       ,9           , *--- Global solar exposure for the half-hour ending 2400 hours Solar Time in MJ.m-2.
+992-1000      ,9           , *--- Uncertainty of global solar exposure for the half-hour ending 2400 hours Solar Time in MJ.m-2.
+1002          ,1           , # symbol, end of record indicator.
+
+
+
+
+ACCUMULATED REPORTS
+___________________
+
+Daily elements are reported at 9am, however many Australian observers do
+not report over a weekend or holiday. In this case they may accumulate rainfall
+and other elements such as maximum temperature. Thus the rainfall total
+reported on a Monday morning may be the total since the previous Friday, not
+just for the last 24 hours. Similarly, the maximum temperature may be the
+highest over a period of 2 or 3 days. Where this happens, the 'days of
+accumulation' field gives the number of days involved.
+
+
+
+
+* QUALITY FLAG DESCRIPTIONS
+___________________________
+
+Y: quality controlled and acceptable
+N: not quality controlled
+W: quality controlled and considered wrong
+S: quality controlled and considered suspect
+I: quality controlled and inconsistent with other known information
+X: no quality information available
+
+
+
+
+*--- RADIATION
+______________
+
+Radiation quantities are generally expressed in terms of either irradiance or radiant
+exposure. Irradiance is a measure of the rate of energy received per unit area, and has SI
+units of Watts per square metre (W.m-2), where 1 Watt (W) is equal to 1 Joule (J) per second.
+Radiant exposure is a time integral (or sum) of irradiance. Thus a 1-minute radiant exposure
+is a measure of the energy received per square metre over a period of 1 minute. Therefore a 1
+minute radiant exposure = mean irradiance (W.m-2) x 60 (s), and has units of Joules per
+square metre (J.m-2). A half-hour radiant exposure would then be the sum of 30 one-minute (or
+1800 one second) radiant exposures. For example: a mean irradiance of 500 W.m-2 over 1 minute
+yields a radiant exposure of 30000 J.m-2 or 30 kJ.m-2.
+
+Measurements of surface-based radiation are made according to Solar Time. Solar time is different to local time
+and is based on the idea that when the sun reaches its highest point in the sky,
+it is noon.(http://en.wikipedia.org/wiki/Solar_time). Current data are 
+measured according to True Solar Time (according to the actual motion of the Sun), while 
+historic data used Mean Solar Time (an approximation of the motion of the Sun that can vary as 
+much as 16 minutes).
+
+A solar position calculator can be found at http://www.ga.gov.au/geodesy/astro/smpos.jsp
+
+Solar radiation definitions can be found at http://www.bom.gov.au/sat/glossary.shtml
+
+Uncertainties are used instead of quality flags with the exception of satellite derived data.
+When using data that is a combination of network and satellite data ignore quality flags where
+uncertainties exist. Uncertainties are in the same units as the data values.
+
+GLOBAL SOLAR EXPOSURE
+Global solar exposure is the total amount of solar energy falling on a horizontal surface of 
+unit area. The daily global solar exposure is the total solar energy for a day. Typical 
+values for daily global solar exposure range 1 to 35 MJ/m2 (megajoules per square metre).
+The values are usually highest in clear sky conditions during the summer, and 
+lowest during winter or very cloudy days.
+
+Combination refers to satellite derived data being used where ground network data is not available.
+If ground network data is available then this is provided, otherwise where possible satellite
+derived data is given instead.
+
+SATELLITE DERIVED SOLAR EXPOSURE DATA
+Global solar exposure data is not measured at the site. Instead, it is derived from satellite
+data for the co-ordinates at which the station is currently located.Solar exposure data have been 
+derived from satellite imagery processed by the Bureau of Meteorology from the Geostationary Meteorological
+Satellites GMS-4, GMS-5, and MTSAT-1R of the Japan Meteorological Agency, and the USA's National
+Oceanic & Atmospheric Administration (NOAA) GOES-9 satellite.
+
+Accuracies of Satellite Estimates:
+The Bureau of Meteorology has recently completed upgrading the process of estimating daily 
+global solar exposure from satellite imagery. The historical data have been reprocessed and,
+compared to the data they replaced, generally provide improved accuracy, fewer missing values,
+and finer spatial resolution. The data from the ground network of solar exposure monitoring sites
+are used to tune the output of the model. Each month a linear regression is performed on the satellite
+and surface data, generating a mean country-wide bias as a linear function of exposure which is used to
+adjust model output. For all data combined, the mean absolute value of the satellite-surface difference
+cycles from about 0.8 MJ.m-2 in winter to about 1.5 MJ.m-2 in summer.
+
+The satellite method of determining radiant exposure from visible images from GMS5 was tested
+using pyranometer data from 9 network sites from July and August 1997. On average the model
+agreed with the measurements to within 0.17% (around 40 kJ.m-2 on a typical clear day) and
+the majority of measurements agreed within 6% (around 1500 kJ.m-2 on a typical clear day).
+The satellite method tends to over estimate the radiant exposure in wet, cloudy conditions
+and to under estimate it in dry conditions. To put these numbers into perspective, we can
+imagine using the measured global solar radiant exposure at a pyranometer location to
+estimate the global solar radiant exposure at a point some distance away. The accuracy of the
+estimation will decrease as we move away from the radiation station. The further we go, the
+less reliable the estimate will be. In a typical agricultural area such as that around Wagga
+Wagga, the satellite becomes more accurate than using surface station values at a distance
+typically 40 km from a pyranometer.
+
+
+DIFFUSE SOLAR EXPOSURE
+Diffuse solar exposure is the total amount of solar energy falling on a horizontal surface
+from all parts of the sky apart from the direct sun. The daily diffuse solar exposure is the
+total diffuse solar energy for this period. Typical values for daily diffuse solar exposure
+range from 1000 to 20000 kJ.m-2 (kilo-Joule per metres squared). The values are usually
+highest during cloudy conditions, and lowest during clear sky days. The diffuse exposure is
+always less than or equal to the global exposures for the same period.
+
+DIRECT SOLAR EXPOSURE
+Direct solar exposure is the total amount of solar energy arriving at the Earth's surface from
+the Sun's direct beam, on a plane perpendicular to the beam, and is usually measured by
+pyrheliometer mounted on a solar tracker. The tracker ensures that the Sun's beam is always
+directed into the instruments field of view during the day. The pyrheliometer has a field of
+view of 5. In order to use this measurement for comparison with global and diffuse global
+exposures irradiances, it is necessary to obtain the horizontal component of the direct solar
+exposure irradiance. This is achieved by multiplying the direct solar exposure irradiance by
+the cosine of the Sun's zenith angle.
+
+DOWNWARD INFRA-RED (TERRESTRIAL) IRRADIANCE
+All matter with a temperature greater than 0 K (Kelvin) emits electromagnetic energy; the
+amount of energy and wavelengths at which the energy is emitted are dependent on the
+temperature of the body. The higher the temperature of the body, the greater the magnitude of
+the energy radiated and the shorter the wavelengths at which that peak energy is radiated. A
+body will radiate energy over a range of wavelengths, called the body's radiation spectrum (a
+subset of the complete electromagnetic spectrum). Most of the Sun's spectrum lies in the
+wavelength range of 0.25 - 4.0  m, the so-called short wave range. Downward infrared
+irradiance is a measurement of the irradiance arriving on a horizontal plane at the Earth's
+surface, for wavelengths in the range 4 - 100  m (the wavelength emitted by atmospheric
+gasses and aerosols). It is related to a representative (or effective radiative)
+temperature of the Earth's atmosphere by the Stefan-Boltzmann Law:
+
+E = s T^4 
+
+Where: E = irradiance measured. [Wm^-2]
+s = Stefan-Boltzmann constant. [5.67 x 10^-8 Wm^-2deg^-4 ] 
+T = representative atmospheric temperature. [K]
+
+Consequently, this quantity will continue to have a positive value, even at night time. It can
+be measured using an Eppley PIR pyrgeometer. As in the case of diffuse solar irradiance
+measurement, it is required that this instrument is shaded from the direct beam of the Sun
+during the day, since the Sun's beam can heat the pyrgeometer dome and contribute to error in
+the measurement. Accordingly, the pyrgeometer is mounted on a tracker. The representative
+temperature is dependent on a number of factors, but typically larger values are recorded
+when middle to low level clouds cover the sky than those recorded during clear sky episodes.
+
+Time base used : Solar
+
+
+
+
+
+GAPS AND MISSING DATA
+_____________________
+
+Very few sites have a complete unbroken record of climate information. A site
+may have been closed, reopened, upgraded to a full weather site or downgraded
+to a rainfall only site during its existence causing breaks in the record for
+some or all elements. Some gaps may be for one element due to a damaged
+instrument, others may be for all elements due to the absence or illness of
+an observer.
+
+
+
+
+INSTUMENTS AND OBSERVATIONAL PRACTICES
+______________________________________
+
+Historically a nearby site (within about 1 mile in earlier days) may have used the same 
+site number.  There may have been changes in instrumentation and/or observing practices
+over the period included in a dataset, which may have an effect on the long-term record.
+In recent years many sites have had observers replaced by Automatic Weather Stations,
+either completely or at certain times of the day.  
+
+
+
+
+TIME
+____
+
+For a part of the year some Australian States adopt Daylight Savings Time (DST), and
+observers continue to take observations according to the local clock.  Times provided 
+with this data are Local Time, unless otherwise noted. 
+
+Care needs to be taken when comparing values from year to year or month to month, because for
+some elements the effect of one hour can be marked, for example air temperature often rises 
+sharply between 8am and 9am.
+
+Daylight Savings has been used in many Australian states since 1973. The
+changeovers occur almost always in October and March, but exact dates vary
+from State to State and year to year. More information can be found at:
+http://www.bom.gov.au/climate/averages/tables/daysavtm.shtml
+
+
+
+
+ROUNDING
+________
+
+The primary way of sending current weather information around the world is via a coded message 
+known as a SYNOP.  This message only allows some measurements to be sent as rounded values.  
+Once manuscript records have been sent in many of these values are typed in with greater 
+precision (normally to one decimal place). This usually occurs within a few months.
+
+If consecutive values all have a zero in the decimal place, then it is almost certain that
+rounding was used earlier.  A new type of message format is progressively being introduced to
+overcome this situation.
+
+
+
+
+COPYRIGHT
+_________
+
+The copyright for any data is held in the Commonwealth of Australia and the purchaser
+shall give acknowledgement of the source in reference to the data.  Apart from dealings
+under the copyright Act, 1968, the purchaser shall not reproduce, modify or supply (by
+sale or otherwise) these data without written permission.  Enquiries should be made
+to the Bureau of Meteorology, PO Box 1289K, Melbourne 3001, marked to the attention of SRDS.
+
+
+
+
+LIABILITY
+_________
+
+While every effort is made to supply the best data available this may not be possible
+in all cases.  We do not give any warranty, nor accept any liability in relation
+to the information given, except that liability (if any), that is required by law.
+
+
+
+
+
+IF DATA IS NOT AS REQUESTED
+___________________________
+
+If the data provided are not as requested, the data will be repeated at no extra cost, 
+provided that:
+a) the Bureau is notified within 60 days.
+b) the printout/disc/data file is returned to the Bureau for checking.
+c) there has been a fault or error in providing the data.
+
+Where there has been no fault or error of provision, the cost involved in
+requested corrective action such as resending the data or providing alternative
+sites will be charged for as necessary.
+
+
+
+
+____________________________________________________________________________________________
+____________________________________________________________________________________________
+
+SITE DETAILS FILE
+
+This file contains the details for the current site or are those which applied when the site
+was closed.  Many sites have been moved, downgraded, upgraded etc over the years.
+
+Byte Location , Byte Size  , Explanation
+--------------------------------------------------------------------------------------------
+
+
+1-2           ,2           , Record identifier - st
+4-9           ,6           , Bureau of Meteorology Station Number.
+11-14         ,4           , Rainfall district code
+16-55         ,40          , Station Name.
+57-63         ,7           , Month/Year site opened. (MM/YYYY)
+65-71         ,7           , Month/Year site closed. (MM/YYYY)
+73-80         ,8           , Latitude to 4 decimal places, in decimal degrees.
+82-90         ,9           , Longitude to 4 decimal places, in decimal degrees.
+92-106        ,15          , Method by which latitude/longitude was derived.
+108-110       ,3           , State.
+112-117       ,6           , Height of station above mean sea level in metres.
+119-124       ,6           , Height of barometer above mean sea level in metres.
+126-130       ,5           , WMO (World Meteorological Organisation) Index Number.
+132-135       ,4           , First year of data supplied in data file.
+137-140       ,4           , Last year of data supplied in data file.
+142-144       ,3           , Percentage complete between first and last records.
+146-148       ,3           , Percentage of values with quality flag 'Y'.
+150-152       ,3           , Percentage of values with quality flag 'N'.
+154-156       ,3           , Percentage of values with quality flag 'W'.
+158-160       ,3           , Percentage of values with quality flag 'S'.
+162-164       ,3           , Percentage of values with quality flag 'I'.
+166           ,1           , # symbol, end of record indicator.
+
+
+
+
+LATITUDES AND LONGITUDES
+________________________
+
+Latitudes and longitudes are given to 4 decimal places, but in many cases will not be
+accurate to 4 decimal places.  This is because in the early days the positions of stations
+were estimated from maps. Gradually the network of open stations is being checked (and
+if necessary corrected) using GPS (Global Positioning System). The method used is given
+in the site details file.
+
+
+
+
+WMO INDEX NUMBER
+________________
+
+This is the number assigned to a site that makes international weather reports every day.
+The number is not actively used in the climate archive, and only a few hundred such 
+numbers are assigned at any time.  These are not perpetual but may be reassigned 
+where a site no longer makes the international reports (synops); thus a particular
+number cannot be regarded as unique and exclusive to any particular site.
+
+
+
+
+PERCENTAGE INFORMATION
+______________________
+
+In some cases the percentage completeness will be overestimated. This will occur if the
+database has incomplete information about the element being selected. In cases where several
+elements are selected, rows with a least one of the elements available are considered
+complete. Where only a limited amount of data is available and the percentage completeness
+is less than 0.5%, an "*" has been used.
+
+An "*" is also used if the percentage of values with a particular quality flag is non zero
+and less than 0.5%.

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)https://data.water.vic.gov.au/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Water Measurement Information System</title>
+    
+    <!-- Mandatory //-->
+    <meta name="DC.Title" content="Water Measurement Information System">
+    <meta name="DC.Description" content="Water Measurement Information System">
+    <meta name="DC.Subject" content="Water data">
+    <meta name="DC.Identifier" content="//www.depi.vic.gov.au">
+    <meta name="DC.Publisher" content="corporateName=State of Victoria, Australia">
+    <meta name="DC.Creator" content="corporateName=Department of Environment and Primary Industries, Victoria">
+    <meta name="DC.Date.created" content="08/05/2013 14:36:48">
+    <meta name="DC.Date.issued" content="08/05/2014 15:05:46">
+    <meta name="DC.Rights" content="//www.depi.vic.gov.au/copyright">
+    <meta name="DC.Coverage.jurisdiction" content="Victoria">
+    <meta name="DC.Coverage.spatial" content="Victoria">
+    <meta name="DC.Format" content="text/html">
+    <meta name="Accessibility" content="No">
+    <link rel="icon" href="https://www.vic.gov.au/themes/v6/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www.vic.gov.au/themes/v6/images/favicon.ico" type="image/x-icon">
+    <style type="text/css">
+      a {
+        font-size:0.85em;
+        text-decoration:none;
+        color:#02537f;
+      }
+      a:hover {
+        text-decoration:underline;
+      }
+      body {
+        font-family:Verdana, sans-serif;
+        font-size:70%;
+        margin:0;
+        border:0;
+        padding:0;
+        height:100%;
+        max-height:100%;
+        min-width:500px;
+        overflow:hidden;
+      }
+      * html body {
+        padding:100px 0 40px 0;
+      }
+      #header {
+        position:absolute;
+        top:0;
+        left:0;
+        margin:0 auto;
+        width:100%;
+        height:100px;
+        overflow:hidden;
+        background:url(wini/images/DELWPbanner.background.jpg) repeat-x;
+      }
+      * html #header {
+        height:100px;
+      }
+      #contents {
+        position:fixed;
+        z-index:1;
+        top:100px;
+        margin:0 auto;
+        margin-left:0.5%;
+        margin-right:0.5%;
+        width:99%;
+        bottom:40px;
+        overflow:hidden;
+      }
+      * html #contents {
+        height:100%;
+        width:100%;
+      }
+      #footer {
+        position:absolute;
+        bottom:0;
+        height:40px;
+        margin:0 auto;
+        width:100%;
+        overflow:hidden;
+        background-color:gainsboro;
+        clear: left;
+        color:#02537f;
+        font-size:.92em;
+        z-index:1; /* vital! */
+      }
+      #footer ul {
+        margin:0 0 6px 0;
+        padding:5px;
+      }
+      #footer li {
+        display:inline;
+        margin:0;
+        padding:0;
+        list-style:none;
+      }
+      * html #footer {
+        height:40px;
+      }
+      #webhyd { /* prevents webhyd 'scrolling' with anchor bookmarks in embedded iframes */
+        position:fixed;
+        background-color:white;
+      }
+      img {
+        border:none;
+      }
+    </style>
+    <script type="text/javascript">
+      if (!location.protocol.match(/https/i)) location.href = location.href.replace(/http/i,'https');
+
+      console.log('start static.htm');
+
+      var Cookies = {
+        init: function () {
+          var allCookies = document.cookie.split('; ');
+          for (i=0;i<allCookies.length;i++) {
+            var cookiePair = allCookies[i].split('=');
+            this[cookiePair[0]] = cookiePair[1];
+          }
+        }
+      };
+      Cookies.init();
+      var username = Cookies['username'];
+      username     = (typeof username != 'undefined') ? username : 'webuser';
+      function parse_hash(hashstr) {
+        var hashArr = new Array();
+          hashstr.replace(/([^#=&]+)(=([^&]*))?/g,
+            function($0,$1,$2,$3) {
+              var key = $1;
+              key     = key.replace(/amp;/,'');
+              if      (typeof $3 != 'undefined') hashArr[key] = $3.replace(/^\s+/g,'').replace(/\s+$/,'');
+              else if (typeof $1 != 'undefined') hashArr[key] = '';
+            }
+          );
+        return hashArr;
+      }
+      function padzero(num) {
+        num = 1*num;
+        num = (num < 10) ? '0'+num : num;
+        return new String(num);
+      }
+      //Make DD/MM/YYYY HH:MM:SS (e.g. 25/02/2009 06:44:24) or MM/DD/YYYY HH:MM:SS (e.g. 02/25/2009 06:44:24)
+      function makeNowLongDate() {
+        var dt   = new Date();
+        var date = padzero(dt.getDate())+'/'+padzero(dt.getMonth()+1)+'/'+padzero(dt.getFullYear()) +'&nbsp;'+ padzero(dt.getHours())+':'+padzero(dt.getMinutes())+':'+padzero(dt.getSeconds());
+        return date;
+      }
+
+      function onLoad() {
+        var hashArr      = parse_hash(location.hash);
+        var hashusername = hashArr['username'];
+        if (username == 'webuser' && typeof hashusername != 'undefined' && hashusername != '') {
+          setTimeout( function() {
+            var menuloc = top.webhyd.menu;
+            menuloc.show_object('loginbox');
+            menuloc.document.getElementById('username').value = hashusername;
+            var hashpassword = hashArr['password'];
+            if ( typeof hashpassword != 'undefined') menuloc.document.getElementById('password').value = hashpassword;
+            menuloc.validate_login_form();
+          },3000);
+        }
+        document.getElementById('lastmod').innerHTML = makeNowLongDate();
+      }
+
+      var is_header_footer;
+      var seen_msg = 0;
+      function togheadfoot(param) {
+        var h = parseInt(document.getElementById('header').style.height);
+        is_header_footer = (isNaN(h) || h > 0) ? 1 : 0
+        if (is_header_footer) {
+          document.getElementById('header').style.height   = 0;
+          document.getElementById('footer').style.height   = 0;
+          document.getElementById('contents').style.top    = 0;
+          document.getElementById('contents').style.bottom = 0;
+          is_header_footer = 0;
+          if (!seen_msg) alert('You may also hide/display the browser header and footer using F11.');
+          seen_msg++;
+        }
+        else {
+          document.getElementById('header').style.height   = '100px';
+          document.getElementById('footer').style.height   = '40px';
+          document.getElementById('contents').style.top    = '100px';
+          document.getElementById('contents').style.bottom = '40px';
+          is_header_footer = 1;
+        }
+      }
+      function reload() {
+        location.href = location.href;
+      }
+
+      // extend 'header' div downwards to allow the menus to display
+      var header_div;
+      var header_height;
+      window.onload = function() {
+        header_div    = document.getElementById('header');
+        header_height = header_div.clientHeight;
+      }
+      function toggle_menu(a) {
+        // introduce 'wait' (to stop flicker when mouse passes over menus)
+        if (a == 1) header_div.style.height = header_height + 250 +'px';
+        else header_div.style.height = header_height +'px';
+      }
+    </script>
+
+  </head>
+
+  <body onload="onLoad()" data-new-gr-c-s-check-loaded="14.1027.0" data-gr-ext-installed="" data-new-gr-c-s-loaded="14.1027.0">
+    <div id="header">
+      <a href="https://www2.delwp.vic.gov.au/" target="_blank">
+        <img src="./Water Measurement Information System_files/DELWPbanner.jpg" alt="State Government of Victoria logo - link to DELWP home" border="0">
+      </a>
+    </div> <!-- end header -->
+
+    <div id="contents">
+      <!-- The iframe src may be relative esp. if same domain as this page. If different domain, src must be absolute. -->
+      <iframe src="./Water Measurement Information System_files/webhyd.anon.english.html" id="webhyd" name="webhyd" width="100%" height="1200px" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen="">
+        If you can read this then your browser does not permit the operation of this facility.
+      </iframe>
+    </div> <!-- end contents -->
+
+    <div id="footer">
+      <ul>
+        <li><a href="https://www2.delwp.vic.gov.au/copyright" target="_blank">Copyright</a> |</li> 
+        <li><a href="https://www2.delwp.vic.gov.au/disclaimer" target="_blank">Disclaimer</a> |</li>
+        <li><a href="https://www2.delwp.vic.gov.au/privacy" target="_blank">Privacy</a> |</li>
+        <li><a href="https://www2.delwp.vic.gov.au/accessibility" target="_blank">Accessibility</a> 
+        <br>Last modified: <span id="lastmod">28/08/2021&nbsp;18:30:46</span>
+      </li></ul>                
+    </div> <!-- end footer -->
+
+  
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
