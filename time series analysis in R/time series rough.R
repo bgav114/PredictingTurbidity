@@ -250,13 +250,13 @@ all_folds_forecast <- data.frame(lower_80=numeric(0),lower_95=numeric(0),upper_8
                                  daily_rain = numeric(0))
 rmse_vector <- c()#gotta do 7*4=28 in testing 111+28=139 until you get to 278 which is 0.8 of full data then actual testing set after 278 has 29 observations 
 a_start <- 1
-a <- 196 #same starting point 
-p <- 1 #(or do 46 period window until a<=310)
-nrow(ts_daily_full)
+a <- 200 #same starting point 
+p <- 2 #(or do 46 period window until a<=310)
+
 while(a <=356){
   
   fit.5 <- auto.arima(ts_daily_full[a_start:a, "daily_turbidity"], xreg = ts_daily_full[a_start:a, c("daily_WL", "daily_rain")])
-  fcasts <- forecast(fit.5, h=p, xreg = ts_daily_full[(a+1):(a+p), c("daily_WL", "daily_rain")])
+  fcasts <- forecast::forecast(fit.5, h=p, xreg = ts_daily_full[(a+1):(a+p), c("daily_WL", "daily_rain")])
   
   one_period_forecast <- data.frame(lower_80=fcasts$lower[,1][1:p],
                                     lower_95=fcasts$lower[,2][1:p],
@@ -274,7 +274,7 @@ while(a <=356){
   
 }
 
-ts_fcasts_turbidity <- c(rep(NA, 196), all_folds_forecast$forecasted_turbidity)
+ts_fcasts_turbidity <- c(rep(NA, 200), all_folds_forecast$forecasted_turbidity)
 plot(daily_2013_2014_rain_lev_turb$daily_turbidity, type="l")
 lines(ts_fcasts_turbidity, col = "red")
 
@@ -283,8 +283,49 @@ mean(rmse_vector)
 rmse_folds <- data.frame(folds = c(1:28),
                          RMSE = rmse_vector)
 
+# Saving predictions for all models vs actual turbidity---------
 
-# Time series Cross Validation (80% to 20% split from 182) ------------------------------------------------------------------
+arima_predictions <- all_folds_forecast$forecasted_turbidity[1:156]
+lstm_predictions <-  all_LSTM_folds_forecast$forecasted_turbidity[1:156]
+gams_predictions <-  all_gams_folds_forecast[1:156]
+actual_turbidity <-  daily_2013_2014_rain_lev_turb[201:356, "daily_turbidity"]
+predictions_actual_turbidity <- data.frame(arima_predictions,lstm_predictions,gams_predictions,actual_turbidity)
+
+plot(predictions_actual_turbidity$daily_turbidity, type="l")
+lines(predictions_actual_turbidity$arima_predictions, col="red")
+lines(predictions_actual_turbidity$lstm_predictions, col="blue")
+lines(predictions_actual_turbidity$gams_predictions, col="green")
+
+write.table(predictions_actual_turbidity, 
+            file = "~/Desktop/water quality RA/data files/initial/created datasets/predictions_actual_turbidity.csv",
+            sep = ",", row.names = F)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ROUGH-----
+
+# Time series Cross Validation (80% to 20% split from 182) 
 
 all_folds_forecast <- data.frame(lower_80=numeric(0),lower_95=numeric(0),upper_80=numeric(0),upper_95=numeric(0),
                                  forcasted_turbidity=numeric(0),actual_turbidity=numeric(0), daily_WL=numeric(0),
@@ -325,17 +366,6 @@ mean(rmse_vector)
 
 rmse_folds <- data.frame(folds = c(1:28),
                          RMSE = rmse_vector)
-
-
-
-
-
-
-
-
-
-
-
 
 
 
