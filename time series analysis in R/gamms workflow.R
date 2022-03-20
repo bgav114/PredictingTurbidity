@@ -208,11 +208,11 @@ legend("topleft",
 
 # GAMS series cross-validation (46 period windows starting from 182)-----------------------------------------------------------------------------------------------------------
 
-all_gams_folds_forecast <- c(forcasted_turbidity=numeric(0))
+all_gams_folds_forecast <- c()
 AIC_values <- c() #gotta do 7*4=28 in testing 111+28=139 until you get to 278 which is 0.8 of full data then actual testing set after 278 has 29 observations 
 a_start <- 1
-a <- 196 #same starting point 
-p <- 1 #(or do 46 period window until a<=310)
+a <- 200 #same starting point 
+p <- 4 #(or do 46 period window until a<=310)
 
 while(a <=356){
         
@@ -230,14 +230,14 @@ while(a <=356){
                    #control = ctrl
                    )
         fcasts <- predict(m3$gam,  newdata = daily_2013_2014_rain_lev_turb[(a+1):(a+p),], se.fit = TRUE)
-        all_gams_folds_forecast <- c(all_gams_folds_forecast, fcasts$fit)
+        all_gams_folds_forecast <- c(all_gams_folds_forecast, fcasts$fit[1])
         AIC_values <- c(AIC_values, nrow(daily_2013_2014_rain_lev_turb[a_start:a,])*log(m3$gam$sig2) + (2*sum(m3$gam$edf)))
         
-        a_start <- a_start+p
-        a <- a+p
+        a_start <- a_start+1 #change to p
+        a <- a+1 #change to p
 }
 
-ts_fcasts_turbidity <- c(rep(NA, 196), all_gams_folds_forecast)
+ts_fcasts_turbidity <- c(rep(NA, 200), all_gams_folds_forecast)
 plot(daily_2013_2014_rain_lev_turb$daily_turbidity, type="l")
 lines(ts_fcasts_turbidity, col = "red")
 
